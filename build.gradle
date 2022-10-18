@@ -1,0 +1,32 @@
+buildscript {
+    ext {
+        compose_ui_version = '1.2.1'
+
+        detekt_version = '1.21.0'
+        firebase_bom_version = '31.0.0'
+        google_services_version = '4.3.14'
+        hilt_androidx_version = '1.0.0'
+        hilt_google_version = '2.44'
+        hilt_lifecycle_version = '1.0.0-alpha03'
+        maps_compose_version = '2.7.2'
+        maps_play_services_version = '18.1.0'
+        lifecycle_version = '2.5.1'
+        navigation_version = '2.5.2'
+    }
+
+    /* Added */
+    dependencies {
+        classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$detekt_version"
+        classpath "com.google.gms:google-services:$google_services_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_google_version"
+    }
+
+}// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.3.0' apply false
+    id 'com.android.library' version '7.3.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
+
+    id 'io.gitlab.arturbosch.detekt' version "$detekt_version" apply false
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin' version '2.0.1' apply false
+}
